@@ -9,4 +9,20 @@ function initialize() {
                               mapOptions);
 }
 
+function detectBrowser() {
+    var useragent = navigator.userAgent;
+    var mapdiv = document.getElementById("map-canvas");
+
+    if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+        mapdiv.style.width = '100%';
+        mapdiv.style.width = '100%';
+    } else {
+        mapdiv.style.width = '600px';
+        mapdiv.style.width = '800px';
+    }
+}
+
 google.maps.event.addDomListener(window, 'load', initialize);
+
+// does this work?
+detectBrowser();
