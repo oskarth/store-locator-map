@@ -5,7 +5,7 @@ function initialize() {
         center: new google.maps.LatLng(59.325, 18.05),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById('map-canvas'),
+    Map = new google.maps.Map(document.getElementById('map-canvas'),
                               mapOptions);
 }
 
