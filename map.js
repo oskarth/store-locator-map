@@ -1,12 +1,23 @@
 var map;
 function initialize() {
     var mapOptions = {
-        zoom: 13,
+        zoom: 10,
         center: new google.maps.LatLng(59.325, 18.05),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    Map = new google.maps.Map(document.getElementById('map-canvas'),
-                              mapOptions);
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map,
+        title: 'Click to zoom'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        map.setZoom(14);
+        map.setCenter(marker.getPosition());
+    });
 }
 
 function detectBrowser() {
